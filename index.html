@@ -9,8 +9,64 @@
 </head>
 
 <body>
-  <main>
+  <main class="main">
     <h1 class="main__heading--sr">Github Finder App</h1>
+    <header class="header">
+      <h2>devfinder</h2>
+      <div class="header__toggle">
+        <p><b>DARK</b></p>
+        <img src="./assets/images/icon-moon.svg" alt="Icon to toggle to dark mode">
+      </div>
+    </header>
+
+    <section class="main__search">
+      <img class="search__icon" src="./assets/images/icon-search.svg" alt="Icon to search for a user">
+      <input type="search" name="user-input" id="input" placeholder="Search Github user">
+      <button type="submit" class="search__submitBtn">Search</button>
+    </section>
+
+    <section class="user__details">
+      <div class="profile">
+        <img class="profile__avatar" src="./assets/images/avatar.png" alt="Avatar Image">
+
+        <div class="profile__details">
+          <p class="profile__details--name">The Octocat</p>
+          <p class="profile__details--handle">@octocat</p>
+          <p class="profile__details--date">Joined 25 Jan 2011</p>
+        </div>
+      </div>
+
+      <div class="profile__bio">
+        <p>This profile has no bio</p>
+      </div>
+
+      <div class="profile__stats">
+        <div>Repos <span class="stats__span--bold stats__repo">8</span></div>
+        <div>Followers <span class="stats__span--bold stats__followers">9941</span></div>
+        <div>Following <span class="stats__span--bold stats__following">9</span></div>
+      </div>
+
+      <div>
+        <p class="profile__info profile__info--location">
+          <img src="./assets/images/icon-location.svg" alt="Location icon"> San Francisco
+        </p>
+
+        <p class="profile__info profile__info--link">
+          <img src="./assets/images/icon-website.svg" alt="Link icon"> https://github.blog
+        </p>
+
+        <p class="profile__info profile__info--twitter">
+          <img src="./assets/images/icon-twitter.svg" alt="Twitter icon"> Not available
+        </p>
+
+        <p class="profile__info profile__info--company">
+          <img src="./assets/images/icon-company.svg" alt="Company icon"> @github
+        </p>
+
+
+
+      </div>
+    </section>
   </main>
 
   <script src="app.js"></script>
