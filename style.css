@@ -50,6 +50,7 @@
 }
 body {
 	line-height: 1.5;
+	height: 100%;
 	background-color: var(--light-bg);
 	-webkit-font-smoothing: antialiased;
 	font-family: 'Space Mono', monospace;
@@ -59,27 +60,21 @@ body {
 	justify-content: center;
 	align-items: center;
 }
+
 img,
 picture,
-video,
-canvas,
 svg {
 	display: block;
 	max-width: 100%;
 }
 input,
-button,
-textarea,
-select {
+button {
 	font: inherit;
 }
 p,
 h1,
 h2,
-h3,
-h4,
-h5,
-h6 {
+h3 {
 	overflow-wrap: break-word;
 }
 
@@ -95,7 +90,7 @@ h6 {
 }
 
 .main {
-	width: 25rem;
+	width: 22rem;
 }
 
 .header {
@@ -103,7 +98,7 @@ h6 {
 	font-size: 1.2rem;
 	display: flex;
 	justify-content: space-between;
-	padding-bottom: 2rem;
+	padding: 1.2rem;
 }
 
 .header__toggle {
@@ -177,6 +172,7 @@ h6 {
 
 .profile__bio {
 	margin-bottom: 2rem;
+	line-height: 1.6rem;
 }
 
 .profile__stats {
@@ -187,6 +183,12 @@ h6 {
 	padding: 1.5rem;
 	border-radius: 1rem;
 	margin-bottom: 1rem;
+}
+
+.profile__div {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 1.2rem;
 }
 
 .profile__stats > div {
@@ -206,10 +208,39 @@ h6 {
 
 .profile__info {
 	display: flex;
-	padding: 1rem;
 	font-size: 1rem;
 }
 
 .profile__info img {
 	margin-right: 1rem;
+	height: 1.5rem;
+}
+
+@media screen and (min-width: 768px) {
+	.main {
+		width: 44rem;
+	}
+
+	.profile__div {
+		grid-template-columns: 1fr 1fr;
+		grid-template-areas:
+			'location twitter'
+			'link company';
+	}
+
+	.profile__info--location {
+		grid-area: location;
+	}
+
+	.profile__info--twitter {
+		grid-area: twitter;
+	}
+
+	.profile__info--link {
+		grid-area: link;
+	}
+
+	.profile__info--company {
+		grid-area: company;
+	}
 }
