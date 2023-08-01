@@ -20,25 +20,34 @@
     </header>
 
     <section class="main__search">
-      <img class="search__icon" src="./assets/images/icon-search.svg" alt="Icon to search for a user">
-      <input type="search" name="user-input" id="input" placeholder="Search Github user">
+      <div class="main__search--div">
+        <img class="search__icon" src="./assets/images/icon-search.svg" alt="Icon to search for a user">
+        <input type="search" name="user-input" id="input" placeholder="Search Github user">
+      </div>
+
       <button type="submit" class="search__submitBtn">Search</button>
     </section>
 
     <section class="user__details">
+
+      <!-- <div class="profile__wrapper"> -->
+
       <div class="profile">
         <img class="profile__avatar" src="./assets/images/avatar.png" alt="Avatar Image">
-
-        <div class="profile__details">
+        <div class="profile__header">
           <p class="profile__details--name">The Octocat</p>
           <p class="profile__details--handle">@octocat</p>
-          <p class="profile__details--date">Joined 25 Jan 2011</p>
+
+        </div>
+
+        <p class="profile__details--date">Joined 25 Jan 2011</p>
+
+        <div class="profile__bio">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam ipsam voluptates incidunt! Minus, magni?
+          </p>
         </div>
       </div>
 
-      <div class="profile__bio">
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam ipsam voluptates incidunt! Minus, magni?</p>
-      </div>
 
       <div class="profile__stats">
         <div>Repos <span class="stats__span--bold stats__repo">8</span></div>
@@ -64,6 +73,7 @@
         </p>
 
       </div>
+      <!-- </div> -->
     </section>
   </main>
 

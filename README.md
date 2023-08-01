@@ -113,7 +113,9 @@ I needed to rearrange the order of some of the information from the Github profi
 'location twitter'
 'link company'
 
-and then set the grid area to the specific section of the profile. Here is the code snippet for how I did this:
+and then set the grid area to the specific section of the profile. I am also learning that if I want to have an empty cell, this would be represented by a "."
+
+Here is the code snippet for how I did this:
 
 ```css
 .profile__div {

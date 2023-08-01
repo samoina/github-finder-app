@@ -19,25 +19,6 @@
 
 	/* Neutral */
 	--error: #f74646;
-
-	/* Darkmode */
-	--dark-primary: #0079ff;
-	--dark-primary-hover: #60abff;
-
-	--dark-txt-high-contrast: #fff;
-	--dark-txt-mid-contrast: #ffff;
-	--dark-txt-low-contrast: #fff;
-
-	--dark-txt-search: #fff;
-	--dark-txt-search-placeholder: #fff;
-
-	--dark-bg: #141d2f;
-	--dark-bg-secondary: #1e2a47;
-
-	--theme-switch-btn-hover: #90a4d4;
-
-	/* Neutral */
-	--error: #f74646;
 }
 
 *,
@@ -50,14 +31,17 @@
 }
 body {
 	line-height: 1.5;
-	height: 100%;
+	height: 100vh;
 	background-color: var(--light-bg);
 	-webkit-font-smoothing: antialiased;
 	font-family: 'Space Mono', monospace;
 	font-size: 13px;
-	display: flex;
+	/* display: flex;
 	flex-direction: column;
 	justify-content: center;
+	align-items: center; */
+	display: grid;
+	justify-items: center;
 	align-items: center;
 }
 
@@ -111,11 +95,15 @@ h3 {
 .main__search {
 	background-color: var(--light-bg-secondary);
 	display: flex;
-	justify-content: space-around;
+	justify-content: space-between;
 	align-items: center;
 	padding: 0.5rem;
 	border-radius: 0.8rem;
 	margin-bottom: 2rem;
+}
+
+.main__search--div {
+	display: flex;
 }
 
 .main__search input {
@@ -139,19 +127,29 @@ h3 {
 .user__details {
 	background-color: var(--light-bg-secondary);
 	padding: 2rem;
+	border-radius: 0.8rem;
 }
 
 .profile {
-	display: flex;
-	align-items: center;
-	margin-bottom: 2rem;
+	display: grid;
+	grid-template-columns: 40% 60%;
+	grid-template-rows: 1fr 1fr;
+	gap: 1rem;
+	grid-template-areas:
+		'avatar profile-header'
+		'bio bio';
 }
 
 .profile__avatar {
-	width: 7rem;
-	height: 7rem;
+	width: 6.5rem;
+	height: 6.5rem;
 	border-radius: 50%;
 	margin-right: 2rem;
+	grid-area: avatar;
+}
+
+.profile__details {
+	grid-area: profile-header;
 }
 
 .profile__details--name {
@@ -167,12 +165,13 @@ h3 {
 }
 
 .profile__details--date {
-	font-size: 1rem;
+	font-size: 0.9rem;
 }
 
 .profile__bio {
 	margin-bottom: 2rem;
 	line-height: 1.6rem;
+	grid-area: bio;
 }
 
 .profile__stats {
@@ -216,9 +215,84 @@ h3 {
 	height: 1.5rem;
 }
 
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+	:root {
+		/* Darkmode */
+		--dark-primary: #0079ff;
+		--dark-primary-hover: #60abff;
+
+		--dark-txt-high-contrast: #fff;
+		--dark-txt-mid-contrast: #ffff;
+		--dark-txt-low-contrast: #fff;
+
+		--dark-txt-search: #fff;
+		--dark-txt-search-placeholder: #fff;
+
+		--dark-bg: #141d2f;
+		--dark-bg-secondary: #1e2a47;
+
+		--theme-switch-btn-hover: #90a4d4;
+
+		/* Neutral */
+		--error: #f74646;
+	}
+
+	body {
+		background-color: var(--dark-bg);
+		color: var(--dark-txt-high-contrast);
+	}
+
+	.header {
+		color: var(--dark-txt-low-contrast);
+	}
+
+	.main__search input {
+		background-color: var(--dark-bg-secondary);
+	}
+
+	.main__search input::placeholder {
+		color: var(--dark-txt-high-contrast);
+	}
+
+	.main__search {
+		background-color: var(--dark-bg-secondary);
+	}
+
+	.search__submitBtn {
+		background-color: var(--dark-primary);
+		color: var(--dark-bg-secondary);
+	}
+
+	.user__details {
+		background-color: var(--dark-bg-secondary);
+	}
+
+	.profile__details--handle {
+		color: var(--dark-primary);
+	}
+
+	.profile__stats {
+		background-color: var(--dark-bg);
+	}
+
+	.profile__stats > div {
+		color: var(--dark-txt-high-contrast);
+	}
+
+	.stats__span--bold {
+		color: var(--dark-txt-high-contrast);
+	}
+}
+
+/* Tablet Design */
 @media screen and (min-width: 768px) {
 	.main {
 		width: 44rem;
+	}
+
+	.search__icon {
+		margin-right: 1rem;
 	}
 
 	.profile__div {
@@ -242,5 +316,53 @@ h3 {
 
 	.profile__info--company {
 		grid-area: company;
+	}
+}
+
+@media screen and (min-width: 1280px) {
+	.main {
+		width: 50rem;
+	}
+
+	.header__toggle {
+		justify-content: space-around;
+		width: 15%;
+	}
+
+	.profile {
+		position: relative;
+		display: flex;
+		flex-wrap: wrap;
+		padding-left: 10rem;
+	}
+
+	.profile__avatar {
+		position: absolute;
+		left: 0;
+	}
+
+	.profile__header {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.profile__details--date {
+		position: absolute;
+		right: 0;
+	}
+
+	.profile__div,
+	.profile__stats {
+		margin-left: 10rem;
+	}
+
+	.profile__stats {
+		padding: 1rem;
+		margin-bottom: 2rem;
+		justify-content: space-around;
+	}
+
+	.main__search {
+		padding: 1rem;
 	}
 }
