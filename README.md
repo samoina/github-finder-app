@@ -12,6 +12,8 @@ This solution is inspired by the [Github Finder challenge on Frontend Mentor](ht
   - [Built with](#built-with)
   - [What I learned](#what-i-learned)
     - [Creating dark and light themes](#creating-dark-and-light-themes)
+    - [Using grid areas in the tablet design](#using-grid-areas-in-the-tablet-design)
+    - [Prefers-color-scheme](#prefers-color-scheme)
   - [Continued Development](#continued-development)
   - [Useful resources](#useful-resources)
 - [Author](#author)
@@ -104,6 +106,39 @@ document.querySelector('.btn').addEventListener('click', function () {
 #### Prefers-color-scheme
 
 CSS provides a media feature called `prefers-color-scheme` that detect's a user's system preference, and if set to dark, the website defaults to dark mode. I feel like the best approach is this one that allows one to respect the user's preference by default, but still allows them to toggle themes.
+
+#### Using grid areas in the tablet design
+
+I needed to rearrange the order of some of the information from the Github profile. (ie location, twitter handle, link and company). To achieve this, I set the display to grid, and created two columns, each 1fr. I then created 4 template areas and named them accordingly:
+'location twitter'
+'link company'
+
+and then set the grid area to the specific section of the profile. Here is the code snippet for how I did this:
+
+```css
+.profile__div {
+	grid-template-columns: 1fr 1fr;
+	grid-template-areas:
+		'location twitter'
+		'link company';
+}
+
+.profile__info--location {
+	grid-area: location;
+}
+
+.profile__info--twitter {
+	grid-area: twitter;
+}
+
+.profile__info--link {
+	grid-area: link;
+}
+
+.profile__info--company {
+	grid-area: company;
+}
+```
 
 ### Continued Development
 
