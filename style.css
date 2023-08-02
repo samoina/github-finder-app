@@ -82,14 +82,22 @@ h3 {
 	font-size: 1.2rem;
 	display: flex;
 	justify-content: space-between;
-	padding: 1.2rem;
+	align-items: center;
+	padding: 1.2rem 0;
 }
 
 .header__toggle {
 	display: flex;
-	justify-content: space-between;
+	justify-content: flex-end;
 	align-items: center;
-	width: 30%;
+}
+
+.header__toggle img {
+	margin-left: 1rem;
+}
+
+.header__toggle--dark {
+	display: none;
 }
 
 .main__search {
@@ -106,7 +114,9 @@ h3 {
 	display: flex;
 }
 
-.main__search input {
+.main__search input,
+.main__search input:focus {
+	outline: none;
 	border: none;
 	font-size: 1rem;
 }
@@ -120,8 +130,14 @@ h3 {
 	font-size: 1rem;
 }
 
+.search__submitBtn:hover {
+	background-color: var(--light-primary-hover);
+	cursor: pointer;
+}
+
 .search__icon {
 	height: 2rem;
+	margin-right: 1rem;
 }
 
 .user__details {
@@ -259,9 +275,18 @@ h3 {
 		background-color: var(--dark-bg-secondary);
 	}
 
+	.main__search input {
+		color: var(--dark-txt-high-contrast);
+	}
+
 	.search__submitBtn {
 		background-color: var(--dark-primary);
-		color: var(--dark-bg-secondary);
+		color: var(--dark-txt-high-contrast);
+	}
+
+	.search__submitBtn:hover {
+		background-color: var(--dark-primary-hover);
+		cursor: pointer;
 	}
 
 	.user__details {
