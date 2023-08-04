@@ -30,7 +30,7 @@
     <section class="main__search">
       <div class="main__search--div">
         <img class="search__icon" src="./assets/images/icon-search.svg" alt="Icon to search for a user">
-        <input type="search" name="user-input" id="input" placeholder="Search Github user">
+        <input type="search" name="user-input" id="input" class="main__search--input" placeholder="Search Github user">
       </div>
 
       <button type="submit" class="search__submitBtn">Search</button>
@@ -44,7 +44,7 @@
         <img class="profile__avatar" src="./assets/images/avatar.png" alt="Avatar Image">
         <div class="profile__header">
           <p class="profile__details--name">The Octocat</p>
-          <p class="profile__details--handle">@octocat</p>
+          <p class="profile__details--login">@octocat</p>
 
         </div>
 
@@ -64,22 +64,26 @@
       </div>
 
       <div class="profile__div">
-        <p class="profile__info profile__info--location">
-          <img src="./assets/images/icon-location.svg" alt="Location icon"> San Francisco
-        </p>
+        <div class="profile__info profile__info--location">
+          <img src="./assets/images/icon-location.svg" alt="Location icon">
+          <p class="profile__location--para">San Francisco</p>
+        </div>
 
 
-        <p class="profile__info profile__info--link">
-          <img src="./assets/images/icon-website.svg" alt="Link icon"> https://github.blog
-        </p>
+        <div class="profile__info profile__info--link">
+          <img src="./assets/images/icon-website.svg" alt="Link icon">
+          <p class="profile__link--para"> https://github.blog</p>
+        </div>
 
-        <p class="profile__info profile__info--twitter">
-          <img src="./assets/images/icon-twitter.svg" alt="Twitter icon"> Not available
-        </p>
+        <div class="profile__info profile__info--twitter">
+          <img src="./assets/images/icon-twitter.svg" alt="Twitter icon">
+          <p class="profile__twitter--para">Not available</p>
+        </div>
 
-        <p class="profile__info profile__info--company">
-          <img src="./assets/images/icon-company.svg" alt="Company icon"> @github
-        </p>
+        <div class="profile__info profile__info--company">
+          <img src="./assets/images/icon-company.svg" alt="Company icon">
+          <p class="profile__company--para"> @github</p>
+        </div>
 
       </div>
       <!-- </div> -->

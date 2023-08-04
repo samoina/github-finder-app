@@ -92,6 +92,10 @@ h3 {
 	align-items: center;
 }
 
+.header__toggle:hover {
+	cursor: pointer;
+}
+
 .header__toggle img {
 	margin-left: 1rem;
 }
@@ -173,7 +177,7 @@ h3 {
 	font-weight: bold;
 }
 
-.profile__details--handle {
+.profile__details--login {
 	color: var(--light-primary);
 	font-size: 1.2rem;
 	font-weight: 400;
@@ -293,7 +297,7 @@ h3 {
 		background-color: var(--dark-bg-secondary);
 	}
 
-	.profile__details--handle {
+	.profile__details--login {
 		color: var(--dark-primary);
 	}
 
