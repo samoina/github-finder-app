@@ -67,7 +67,7 @@ const elements = {
 	name: document.querySelector('.profile__details--name'),
 	login: document.querySelector('.profile__details--login'),
 	bio: document.querySelector('.profile__bio'),
-	created_at: document.querySelector('.profile__details--dateShow'),
+	created_at: document.querySelectorAll('.profile__details--date'),
 	public_repos: document.querySelector('.stats__repo'),
 	followers: document.querySelector('.stats__followers'),
 	following: document.querySelector('.stats__following'),
@@ -119,14 +119,18 @@ const getGitUser = async (userName) => {
 			} else if (key === 'avatar_url') {
 				elements['avatar_url'].src = userData[key];
 			} else if (key === 'created_at') {
-				const isoStringDate = userData[key];
-				const dateJoined = new Date(isoStringDate);
+				//Loop through both different dates since there are two instances with the same class
+				elements[key].forEach((element) => {
+					const isoStringDate = userData[key];
+					const dateJoined = new Date(isoStringDate);
 
-				let month = dateJoined.toLocaleString('default', { month: 'short' });
+					let month = dateJoined.toLocaleString('default', { month: 'short' });
 
-				const formatDate = `Joined ${dateJoined.getDate()} ${month} ${dateJoined.getFullYear()}`;
+					const formatDate = `Joined ${dateJoined.getDate()} ${month} ${dateJoined.getFullYear()}`;
+					element.textContent = formatDate;
+				});
 
-				elements[key].textContent = formatDate;
+				// elements[key].textContent = formatDate;
 			} else if (elements[key]) {
 				elements[key].textContent = userData[key];
 			}
