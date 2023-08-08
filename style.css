@@ -189,7 +189,6 @@ h3 {
 }
 
 .profile__bio {
-	margin-bottom: 2rem;
 	line-height: 1.6rem;
 	grid-area: bio;
 }
@@ -293,6 +292,10 @@ h3 {
 		cursor: pointer;
 	}
 
+	.profile__details--dateHidden {
+		display: none;
+	}
+
 	.user__details {
 		background-color: var(--dark-bg-secondary);
 	}
@@ -316,12 +319,25 @@ h3 {
 
 /* Tablet Design */
 @media screen and (min-width: 768px) {
+	body {
+		background-color: red;
+	}
+
 	.main {
 		width: 44rem;
 	}
 
 	.search__icon {
 		margin-right: 1rem;
+	}
+
+	.profile {
+		position: relative;
+	}
+
+	.profile__header {
+		position: absolute;
+		left: 25%;
 	}
 
 	.profile__div {
@@ -373,11 +389,22 @@ h3 {
 	.profile__header {
 		display: flex;
 		flex-direction: column;
+		/* border: 2px solid red; */
 	}
 
-	.profile__details--date {
+	.profile__details--dateShow {
+		display: none;
+	}
+
+	.profile__details--dateHidden {
+		display: block;
 		position: absolute;
 		right: 0;
+	}
+
+	.profile__bio {
+		margin-top: 15%;
+		margin-bottom: 5%;
 	}
 
 	.profile__div,
