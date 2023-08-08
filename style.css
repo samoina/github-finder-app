@@ -144,6 +144,14 @@ h3 {
 	margin-right: 1rem;
 }
 
+.error__para {
+	background-color: var(--light-bg);
+	color: var(--error);
+	padding: 1em;
+	text-align: center;
+	font-weight: 700;
+}
+
 .user__details {
 	background-color: var(--light-bg-secondary);
 	padding: 2rem;
@@ -319,9 +327,9 @@ h3 {
 
 /* Tablet Design */
 @media screen and (min-width: 768px) {
-	body {
+	/* body {
 		background-color: red;
-	}
+	} */
 
 	.main {
 		width: 44rem;

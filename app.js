@@ -57,6 +57,9 @@
 // };
 
 //place variables in an ob ject called elements
+const profile = document.querySelector('.profile');
+const userDetails = document.querySelector('.user__details');
+
 const elements = {
 	themeBtn: document.querySelector('.header__toggle'),
 	searchBtn: document.querySelector('.search__submitBtn'),
@@ -111,6 +114,8 @@ const getGitUser = async (userName) => {
 				//if not null
 			} else if (key === 'blog' && userData[key] === '') {
 				elements[key].textContent = 'Not available';
+			} else if (key === 'login') {
+				elements[key].textContent = `@${userData[key]}`;
 			} else if (key === 'avatar_url') {
 				elements['avatar_url'].src = userData[key];
 			} else if (key === 'created_at') {
@@ -127,12 +132,26 @@ const getGitUser = async (userName) => {
 			}
 		}
 	} catch (error) {
-		console.error('Error fetching user data:', error);
+		console.error(error);
+
+		const customErrorMsg = 'No results for this user';
+		clearProfile();
+		showError(customErrorMsg);
 	}
 };
 
-const clearEntries = () => {
-	for (const key in elements) {
-		elements[key].textContent = '';
-	}
+//Function to show an error message if user is not found
+const showError = (error) => {
+	let errorMessage = document.createTextNode(error);
+	let errorPara = document.createElement('p');
+
+	errorPara.classList.add('error__para');
+	errorPara.appendChild(errorMessage);
+
+	userDetails.parentNode.insertBefore(errorPara, userDetails);
+};
+
+//Clear previous entries if there's an error message
+const clearProfile = () => {
+	userDetails.style.display = 'none';
 };
