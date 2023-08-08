@@ -113,6 +113,15 @@ const getGitUser = async (userName) => {
 				elements[key].textContent = 'Not available';
 			} else if (key === 'avatar_url') {
 				elements['avatar_url'].src = userData[key];
+			} else if (key === 'created_at') {
+				const isoStringDate = userData[key];
+				const dateJoined = new Date(isoStringDate);
+
+				let month = dateJoined.toLocaleString('default', { month: 'short' });
+
+				const formatDate = `Joined ${dateJoined.getDate()} ${month} ${dateJoined.getFullYear()}`;
+
+				elements[key].textContent = formatDate;
 			} else if (elements[key]) {
 				elements[key].textContent = userData[key];
 			}
