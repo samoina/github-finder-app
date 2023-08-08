@@ -1,0 +1,82 @@
+:root {
+	/* Lightmode */
+	--light-primary: #0079ff;
+	--light-primary-hover: #60abff;
+
+	--light-txt-high-contrast: #2b3442;
+	--light-txt-mid-contrast: #4b6a9b;
+	--light-txt-low-contrast: #697c9a;
+
+	--light-txt-search: #222731;
+	--light-txt-search-placeholder: #4b6a9b;
+
+	--light-bg: #f6f8ff;
+	--light-bg-secondary: #fefefe;
+
+	--theme-switch-btn-hover: #222731;
+
+	/* Neutral */
+	--error: #f74646;
+}
+
+body {
+	background-color: var(--light-bg);
+}
+
+.header {
+	color: var(--light-txt-low-contrast);
+}
+
+/* .main__search input {
+	background-color: var(--dark-bg-secondary);
+}
+
+.main__search input::placeholder {
+	color: var(--dark-txt-high-contrast);
+} */
+
+.main__search {
+	background-color: var(--light-bg-secondary);
+}
+
+/* .main__search input {
+	color: var(--dark-txt-high-contrast);
+} */
+
+.search__submitBtn {
+	background-color: var(--light-primary);
+	color: var(--light-bg-secondary);
+}
+
+.search__submitBtn:hover {
+	background-color: var(--light-primary-hover);
+}
+
+/* .profile__details--dateHidden {
+	display: none;
+} */
+
+.error__para {
+	background-color: var(--light-bg);
+	color: var(--error);
+}
+
+.user__details {
+	background-color: var(--light-bg-secondary);
+}
+
+.profile__details--login {
+	color: var(--light-primary);
+}
+
+.profile__stats {
+	background-color: var(--light-bg);
+}
+
+.profile__stats > div {
+	color: var(--light-txt-low-contrast);
+}
+
+.stats__span--bold {
+	color: var(--light-txt-high-contrast);
+}

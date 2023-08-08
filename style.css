@@ -1,26 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
 
-:root {
-	/* Lightmode */
-	--light-primary: #0079ff;
-	--light-primary-hover: #60abff;
-
-	--light-txt-high-contrast: #2b3442;
-	--light-txt-mid-contrast: #4b6a9b;
-	--light-txt-low-contrast: #697c9a;
-
-	--light-txt-search: #222731;
-	--light-txt-search-placeholder: #4b6a9b;
-
-	--light-bg: #f6f8ff;
-	--light-bg-secondary: #fefefe;
-
-	--theme-switch-btn-hover: #222731;
-
-	/* Neutral */
-	--error: #f74646;
-}
-
 *,
 *::before,
 *::after {
@@ -32,14 +11,10 @@
 body {
 	line-height: 1.5;
 	height: 100vh;
-	background-color: var(--light-bg);
+
 	-webkit-font-smoothing: antialiased;
 	font-family: 'Space Mono', monospace;
 	font-size: 13px;
-	/* display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center; */
 	display: grid;
 	justify-items: center;
 	align-items: center;
@@ -78,7 +53,6 @@ h3 {
 }
 
 .header {
-	color: var(--light-txt-low-contrast);
 	font-size: 1.2rem;
 	display: flex;
 	justify-content: space-between;
@@ -105,7 +79,6 @@ h3 {
 }
 
 .main__search {
-	background-color: var(--light-bg-secondary);
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -126,8 +99,6 @@ h3 {
 }
 
 .search__submitBtn {
-	background-color: var(--light-primary);
-	color: var(--light-bg-secondary);
 	border: none;
 	padding: 0.7rem;
 	border-radius: 0.5rem;
@@ -135,7 +106,6 @@ h3 {
 }
 
 .search__submitBtn:hover {
-	background-color: var(--light-primary-hover);
 	cursor: pointer;
 }
 
@@ -145,15 +115,12 @@ h3 {
 }
 
 .error__para {
-	background-color: var(--light-bg);
-	color: var(--error);
 	padding: 1em;
 	text-align: center;
 	font-weight: 700;
 }
 
 .user__details {
-	background-color: var(--light-bg-secondary);
 	padding: 2rem;
 	border-radius: 0.8rem;
 }
@@ -186,7 +153,6 @@ h3 {
 }
 
 .profile__details--login {
-	color: var(--light-primary);
 	font-size: 1.2rem;
 	font-weight: 400;
 	padding-bottom: 1rem;
@@ -205,7 +171,7 @@ h3 {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	background-color: var(--light-bg);
+
 	padding: 1.5rem;
 	border-radius: 1rem;
 	margin: 0.5rem 0 1rem;
@@ -218,7 +184,6 @@ h3 {
 }
 
 .profile__stats > div {
-	color: var(--light-txt-low-contrast);
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -229,7 +194,6 @@ h3 {
 .stats__span--bold {
 	font-weight: 700;
 	font-size: 1.2rem;
-	color: var(--light-txt-high-contrast);
 }
 
 .profile__info {
@@ -240,89 +204,6 @@ h3 {
 .profile__info img {
 	margin-right: 1rem;
 	height: 1.5rem;
-}
-
-/* Dark mode */
-@media (prefers-color-scheme: dark) {
-	:root {
-		/* Darkmode */
-		--dark-primary: #0079ff;
-		--dark-primary-hover: #60abff;
-
-		--dark-txt-high-contrast: #fff;
-		--dark-txt-mid-contrast: #ffff;
-		--dark-txt-low-contrast: #fff;
-
-		--dark-txt-search: #fff;
-		--dark-txt-search-placeholder: #fff;
-
-		--dark-bg: #141d2f;
-		--dark-bg-secondary: #1e2a47;
-
-		--theme-switch-btn-hover: #90a4d4;
-
-		/* Neutral */
-		--error: #f74646;
-	}
-
-	body {
-		background-color: var(--dark-bg);
-		color: var(--dark-txt-high-contrast);
-	}
-
-	.header {
-		color: var(--dark-txt-low-contrast);
-	}
-
-	.main__search input {
-		background-color: var(--dark-bg-secondary);
-	}
-
-	.main__search input::placeholder {
-		color: var(--dark-txt-high-contrast);
-	}
-
-	.main__search {
-		background-color: var(--dark-bg-secondary);
-	}
-
-	.main__search input {
-		color: var(--dark-txt-high-contrast);
-	}
-
-	.search__submitBtn {
-		background-color: var(--dark-primary);
-		color: var(--dark-txt-high-contrast);
-	}
-
-	.search__submitBtn:hover {
-		background-color: var(--dark-primary-hover);
-		cursor: pointer;
-	}
-
-	.profile__details--dateHidden {
-		display: none;
-	}
-
-	.user__details {
-		background-color: var(--dark-bg-secondary);
-	}
-
-	.profile__details--login {
-		color: var(--dark-primary);
-	}
-
-	.profile__stats {
-		background-color: var(--dark-bg);
-	}
-
-	.profile__stats > div {
-		color: var(--dark-txt-high-contrast);
-	}
-
-	.stats__span--bold {
-		color: var(--dark-txt-high-contrast);
-	}
 }
 
 /* Tablet Design */
