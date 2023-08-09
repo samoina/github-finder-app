@@ -62,12 +62,10 @@ document.addEventListener('DOMContentLoaded', function () {
 	const toggleDivs = document.querySelectorAll('.header__toggle');
 	const themeStyleLink = document.getElementById('theme-style');
 
-	// Check user's preference for dark or light theme initially. use the window.matchMedia() method to check the 'prefers-color-scheme' mQuery, and if it matches, it returns a boolean- true, which is then stored in the variable
 	const prefersDarkTheme = window.matchMedia(
 		'(prefers-color-scheme: dark)'
 	).matches;
 
-	// Function to set the theme
 	const setTheme = (isDark) => {
 		if (isDark) {
 			themeStyleLink.href = 'dark-theme.css';
@@ -76,10 +74,7 @@ document.addEventListener('DOMContentLoaded', function () {
 		}
 	};
 
-	//initial theme based on user's preference, a boolean is passed in
 	setTheme(prefersDarkTheme);
-
-	//allow manual toggling.when div is clicked. get the current url of the theme-specific CSS file, and check if it contains dark. if it contains dark, then isDarkTheme is set to true.
 
 	toggleDivs.forEach((toggleDiv) => {
 		toggleDiv.addEventListener('click', function () {
@@ -90,12 +85,29 @@ document.addEventListener('DOMContentLoaded', function () {
 		});
 	});
 
-	// Listen for changes in user's preference and update the theme
 	window
 		.matchMedia('(prefers-color-scheme: dark)')
 		.addEventListener('change', function (ev) {
 			setTheme(ev.matches);
 		});
+
+	//On Load, display the octocat profile to avoid hardcoding
+	const elementsOnLoad = {
+		avatar_url: document.querySelector('.profile__avatar'),
+		name: document.querySelector('.profile__details--name'),
+		login: document.querySelector('.profile__details--login'),
+		bio: document.querySelector('.profile__bio'),
+		created_at: document.querySelectorAll('.profile__details--date'),
+		public_repos: document.querySelector('.stats__repo'),
+		followers: document.querySelector('.stats__followers'),
+		following: document.querySelector('.stats__following'),
+		location: document.querySelector('.profile__location--para'),
+		blog: document.querySelector('.profile__link--para'),
+		twitter_username: document.querySelector('.profile__twitter--para'),
+		company: document.querySelector('.profile__company--para'),
+	};
+
+	getGitUser('octocat');
 });
 
 //place variables in an ob ject called elements
