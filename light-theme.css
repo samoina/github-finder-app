@@ -23,25 +23,30 @@ body {
 	background-color: var(--light-bg);
 }
 
+.main {
+	background-color: var(--light-bg);
+}
+
 .header {
 	color: var(--light-txt-low-contrast);
 }
 
-/* .main__search input {
-	background-color: var(--dark-bg-secondary);
+.header__toggle--light {
+	display: none;
 }
 
-.main__search input::placeholder {
-	color: var(--dark-txt-high-contrast);
-} */
+.header__toggle--dark {
+	display: flex;
+}
 
 .main__search {
 	background-color: var(--light-bg-secondary);
 }
 
-/* .main__search input {
-	color: var(--dark-txt-high-contrast);
-} */
+.main__search input,
+.main__search input::placeholder {
+	color: var(--light-txt-high-contrast);
+}
 
 .search__submitBtn {
 	background-color: var(--light-primary);
@@ -52,9 +57,9 @@ body {
 	background-color: var(--light-primary-hover);
 }
 
-/* .profile__details--dateHidden {
+.profile__details--dateHidden {
 	display: none;
-} */
+}
 
 .error__para {
 	background-color: var(--light-bg);

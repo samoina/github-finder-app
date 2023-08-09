@@ -1,4 +1,4 @@
-/* Variables */
+/* THIS WAS BEFORE I SIMPLIFIED THE CODE TO PLACE THE VARIABLES IN AN OBJECT*/
 
 // const themeBtn = document.querySelector('.header__toggle');
 // const searchBtn = document.querySelector('.search__submitBtn');
@@ -55,6 +55,48 @@
 // 		console.error('Error fetching user data:', error);
 // 	}
 // };
+
+/* THIS IS CODE TO TOGGLE THE THEME */
+//wait for the DOM to load before exevuting the JS code
+document.addEventListener('DOMContentLoaded', function () {
+	const toggleDivs = document.querySelectorAll('.header__toggle');
+	const themeStyleLink = document.getElementById('theme-style');
+
+	// Check user's preference for dark or light theme initially. use the window.matchMedia() method to check the 'prefers-color-scheme' mQuery, and if it matches, it returns a boolean- true, which is then stored in the variable
+	const prefersDarkTheme = window.matchMedia(
+		'(prefers-color-scheme: dark)'
+	).matches;
+
+	// Function to set the theme
+	const setTheme = (isDark) => {
+		if (isDark) {
+			themeStyleLink.href = 'dark-theme.css';
+		} else {
+			themeStyleLink.href = 'light-theme.css';
+		}
+	};
+
+	//initial theme based on user's preference, a boolean is passed in
+	setTheme(prefersDarkTheme);
+
+	//allow manual toggling.when div is clicked. get the current url of the theme-specific CSS file, and check if it contains dark. if it contains dark, then isDarkTheme is set to true.
+
+	toggleDivs.forEach((toggleDiv) => {
+		toggleDiv.addEventListener('click', function () {
+			const currentTheme = themeStyleLink.getAttribute('href');
+			const isDarkTheme = currentTheme.includes('dark');
+
+			setTheme(!isDarkTheme);
+		});
+	});
+
+	// Listen for changes in user's preference and update the theme
+	window
+		.matchMedia('(prefers-color-scheme: dark)')
+		.addEventListener('change', function (ev) {
+			setTheme(ev.matches);
+		});
+});
 
 //place variables in an ob ject called elements
 const profile = document.querySelector('.profile');

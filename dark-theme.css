@@ -28,6 +28,14 @@ body {
 	color: var(--dark-txt-low-contrast);
 }
 
+.header__toggle--dark {
+	display: none;
+}
+
+.header__toggle--light {
+	display: flex;
+}
+
 .main__search input {
 	background-color: var(--dark-bg-secondary);
 }
