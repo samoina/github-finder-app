@@ -47,6 +47,7 @@ Users should be able to:
 - Semantic HTML5 markup
 - CSS custom properties
 - Flexbox
+- CSS Grid
 - Mobile-first workflow
 - Vanilla Javascript
 - BEM naming convention
@@ -235,6 +236,8 @@ Here is the code snippet for how I did this:
 ```
 
 ### Continued Development
+
+Looking to do this project in ReactJS as well to hone the skills I have learned.
 
 ### Useful resources
 

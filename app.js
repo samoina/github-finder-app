@@ -58,7 +58,7 @@
 
 /* THIS IS CODE TO TOGGLE THE THEME */
 //wait for the DOM to load before exevuting the JS code
-document.addEventListener('DOMContentLoaded', function () {
+window.addEventListener('load', function () {
 	const toggleDivs = document.querySelectorAll('.header__toggle');
 	const themeStyleLink = document.getElementById('theme-style');
 
@@ -113,6 +113,7 @@ document.addEventListener('DOMContentLoaded', function () {
 //place variables in an ob ject called elements
 const profile = document.querySelector('.profile');
 const userDetails = document.querySelector('.user__details');
+const searchInput = document.querySelector('.main__search--input');
 
 const elements = {
 	themeBtn: document.querySelector('.header__toggle'),
@@ -133,11 +134,23 @@ const elements = {
 
 const searchBtn = elements.searchBtn;
 
-searchBtn.addEventListener('click', async function () {
-	const input = document.querySelector('.main__search--input');
-	const userInput = input.value;
+const handleUserAction = () => {
+	const userInput = searchInput.value;
 
-	await getGitUser(userInput);
+	if (userInput === '') {
+		alert('Please enter one or more characters to search a Github user');
+	} else {
+		getGitUser(userInput);
+	}
+};
+
+searchBtn.addEventListener('click', handleUserAction);
+
+//Allow the user to press enter to search. EK added on the input
+searchInput.addEventListener('keydown', function (event) {
+	if (event.key === 'Enter') {
+		handleUserAction();
+	}
 });
 
 const getGitUser = async (userName) => {
